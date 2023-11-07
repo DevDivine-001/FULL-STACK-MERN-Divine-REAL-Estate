@@ -16,7 +16,6 @@ export const signup = async (req, res, next)=>{
         // res.status(500).json(error.message);
 
         // next(errorHandler(500,'error from the function'));
-
         next(error);
     }
 
