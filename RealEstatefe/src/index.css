@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+}
+
+@font-face {
+  src: url(/fonts/Poppins-Regular.ttf);
+  font-family: Poppin;
+}
+.Poppin {
+  font-family: Poppin;
+}
+
+:root {
+  font-family: Poppin,Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: none;
+  color: none;
+  background-color: none;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}

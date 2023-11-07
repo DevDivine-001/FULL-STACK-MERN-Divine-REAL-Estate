@@ -1,0 +1,7 @@
+declare module "*Home"
+declare module "*Signin"
+declare module "*SignOut"
+declare module "*Profile"
+declare module "*About"
+declare module "*Header"
+// declare module "*react-slick"
