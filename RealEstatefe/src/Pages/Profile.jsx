@@ -11,6 +11,9 @@ import {
   updateUserStart,
   updateUserSuccess,
   updateUserFailure,
+  deleteUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -67,34 +70,51 @@ export default function Profile() {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     dispatch(updateUserStart());
+  //     const res = await fetch(`/api/user/update/${currentUser._id}`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     const data = await res.json();
+  //     if (data.success === false) {
+  //       dispatch(updateUserFailure(data.message));
+  //       return;
+  //     }
+
+  //     dispatch(updateUserSuccess(data));
+  //     setUpdateSuccess(true);
+  //   } catch (error) {
+  //     dispatch(updateUserFailure(error.message));
+  //   }
+  // };
+
+  const handleDeleteUser = async () =>{
     try {
-      dispatch(updateUserStart());
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      dispatch(deleteUserStart());
+      const res = await fetch(`/api/user/delete/${currentUser._id}`,{
+        method: 'DELETE',
       });
       const data = await res.json();
-      if (data.success === false) {
-        dispatch(updateUserFailure(data.message));
-        return;
+      if(data.success === false){
+        dispatch(deleteUserFailure(data.message))
+        return
       }
-
-      dispatch(updateUserSuccess(data));
-      setUpdateSuccess(true);
+      dispatch(deleteUserSuccess(data))
     } catch (error) {
-      dispatch(updateUserFailure(error.message));
+      dispatch(deleteUserFailure(error.message))
     }
-  };
+  }
 
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-3'>Profile</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+    <div className='p-3 max-w-lg mx-auto flex flex-col gap-3'>
+      <h1 className='text-3xl font-semibold text-center'>Profile</h1>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
         <input
           onChange={(e) => setFile(e.target.files[0])}
           type='file'
@@ -106,7 +126,7 @@ export default function Profile() {
           onClick={() => fileRef.current.click()}
           src={formData.avatar || currentUser.avatar}
           alt='profile'
-          className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2'
+          className='rounded-full h-24 w-24 object-cover cursor-pointer self-center'
         />
         <p className='text-sm self-center'>
           {fileUploadError ? (
@@ -154,6 +174,12 @@ export default function Profile() {
         <button className='p-3'>Create Listing</button>
         </Link>
       </form>
+      <div className='flex justify-between'>
+        <span className='text-red-700 cursor-pointer rounded-lg border p-3 text-[11px] sm:text-sm' onClick={handleDeleteUser}>Delete account</span>
+        <button className='text-red-700 cursor-pointer rounded-lg border p-3  text-[11px] sm:text-sm'>Sign Out</button>
+        <button className='text-green-700 cursor-pointer rounded-lg border-green-700 border p-3  text-[11px] sm:text-sm animate-bounce'> Show Listings</button>
+       
+      </div>
       <p className='text-red-700 mt-5'>{error ? error : ''}</p>
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
