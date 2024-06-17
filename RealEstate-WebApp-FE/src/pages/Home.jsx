@@ -55,7 +55,7 @@ export default function Home() {
           <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl h-auto bg-[]'>
             <Typewriter
               options={{
-                strings: ['Find your next perfect', 'place with ease'],
+                strings: ['Find your next perfect', 'Place with ease'],
                 autoStart: true,
                 loop: true,
               }}
