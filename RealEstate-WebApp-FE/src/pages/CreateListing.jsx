@@ -7,11 +7,11 @@ import {
 } from 'firebase/storage';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
     imageUrls: [],
@@ -147,7 +147,7 @@ export default function CreateListing() {
       if (data.success === false) {
         setError(data.message);
       }
-      navigate(`/listing/${data._id}`);
+      // navigate(`/listing/${data._id}`);
     } catch (error) {
       setError(error.message);
       setLoading(false);
@@ -155,10 +155,10 @@ export default function CreateListing() {
   };
   return (
     <main className='flex justify-between items-center max-w-6xl mx-auto p-3'>
-<div className='flex-col flex w-full'>
-      <h1 className='text-3xl font-semibold text-center my-7'>
-        Create a Listing
-      </h1>
+      <div className='flex-col flex w-full'>
+        <h1 className='text-3xl font-semibold text-center my-7'>
+          Create a Listing
+        </h1>
         <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4 bg-[] justify-between w-[100%]'>
           <div className='flex flex-col gap-4 flex-1'>
             <input
@@ -367,7 +367,7 @@ export default function CreateListing() {
             {error && <p className='text-red-700 text-sm'>{error}</p>}
           </div>
         </form>
-</div>
+      </div>
     </main>
   );
 }
