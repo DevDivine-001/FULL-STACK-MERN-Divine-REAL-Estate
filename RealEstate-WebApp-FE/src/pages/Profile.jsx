@@ -246,7 +246,7 @@ export default function Profile() {
           Sign out
         </span>
         <button
-           onClick={handleShowListings} 
+          onClick={handleShowListings}
           className='text-green-700 '>
           Show Listings
         </button>
@@ -261,7 +261,7 @@ export default function Profile() {
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
-            
+
 
       {userListings && userListings.length > 0 && (
         <div className='flex flex-col gap-4'>
