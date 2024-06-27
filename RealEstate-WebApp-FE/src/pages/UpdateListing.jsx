@@ -170,7 +170,7 @@ export default function CreateListing() {
     }
   };
   return (
-    <main className='flex justify-between items-center max-w-6xl mx-auto p-3'>
+    <main className='flex justify-between items-center max-w-6xl mx-auto p-3 z-'>
       <div className='flex-col flex w-[100%]'>
         <h1 className='text-3xl font-semibold text-center my-7'>
           Update a Listing
