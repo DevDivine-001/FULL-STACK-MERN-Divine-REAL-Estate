@@ -17,7 +17,7 @@ These changes enhance the robustness of the listing retrieval function and make 
 
 
 
-These are the list of code that i used to build the Real-Estate Website
+These are the list of code that I used to build the Real-Estate Website
 
 
 1, Vite: Fast and modern build tool for frontend development.
@@ -27,7 +27,7 @@ These are the list of code that i used to build the Real-Estate Website
 5, Tailwind CSS: Utility-first CSS framework for styling.
 6, Styled Components: Library for writing CSS in JS.
 7, ESLint: Linter for identifying and fixing code quality issues.
-8, Prettier: Code formatter to ensure consistent code style.
+8, Prettier: Code formatting to ensure consistent code style.
 9, MongoDB Atlas: Cloud database service for storing property listings.
 10, Express: Web framework for Node.js, useful for building a backend API.
 11, Node.js: JavaScript runtime for running the backend server.
