@@ -27,6 +27,8 @@ export default function Listing() {
     const [contact, setContact] = useState(false);
     const params = useParams();
     const { currentUser } = useSelector((state) => state.user);
+    console.log(currentUser.id, listing?.userRef)
+    
 
     useEffect(() => {
         const fetchListing = async () => {
@@ -62,7 +64,7 @@ export default function Listing() {
                         {listing.imageUrls.map((url) => (
                             <SwiperSlide key={url}>
                                 <div
-                                    className='h-[550px]'
+                                    className='h-[550px] bg-[red]'
                                     style={{
                                         background: `url(${url}) center no-repeat`,
                                         backgroundSize: 'cover',
@@ -101,7 +103,7 @@ export default function Listing() {
                             {listing.address}
                         </p>
                         <div className='flex gap-4'>
-                            <p className='bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
+                            <p className='bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
                                 {listing.type === 'rent' ? 'For Rent' : 'For Sale'}
                             </p>
                             {listing.offer && (

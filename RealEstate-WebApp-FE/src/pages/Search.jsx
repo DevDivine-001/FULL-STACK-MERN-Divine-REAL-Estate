@@ -128,10 +128,10 @@ export default function Search() {
     setListings([...listings, ...data]);
   };
   return (
-    <div className='flex flex-col md:flex-row'>
-      <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen'>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
-          <div className='flex items-center gap-2'>
+    <div className='flex flex-col md:flex-row '>
+      <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen '>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-8  top-0 sticky'>
+          <div className='flex items-center gap-2 top-0 sticky'>
             <label className='whitespace-nowrap font-semibold'>
               Search Term:
             </label>
@@ -229,7 +229,7 @@ export default function Search() {
           </button>
         </form>
       </div>
-      <div className='flex-1'>
+      <div className='flex-1 '>
         <h1 className='text-3xl font-semibold border-b p-3 text-slate-700 mt-5'>
           Listing results:
         </h1>
