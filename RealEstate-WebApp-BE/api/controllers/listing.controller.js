@@ -175,6 +175,45 @@ export const getListing = async (req, res, next) => {
 
 // import Listing from './models/Listing'; // Ensure the correct path to the Listing model
 
+// // export const getListings = async (req, res, next) => {
+//     try {
+//         const limit = parseInt(req.query.limit) || 12;
+//         const startIndex = parseInt(req.query.startIndex) || 0;
+//         const searchTerm = req.query.searchTerm || '';
+//         const sortField = req.query.sort || 'createdAt';
+//         const order = req.query.order === 'asc' ? 1 : -1; // Default to descending order
+
+//         const query = {
+//             name: { $regex: searchTerm, $options: 'ii' },
+//         };
+
+//         if (req.query.offer !== undefined) {
+//             query.offer = req.query.offer === 'true';
+//         }
+
+//         if (req.query.furnished !== undefined) {
+//             query.furnished = req.query.furnished === 'true';
+//         }
+
+//         if (req.query.parking !== undefined) {
+//             query.parking = req.query.parking === 'true';
+//         }
+
+//         if (req.query.type !== undefined && req.query.type !== 'all') {
+//             query.type = req.query.type;
+//         }
+
+//         const listings = await Listing.find(query)
+//             .sort({ [sortField]: order })
+//             .limit(limit)
+//             .skip(startIndex);
+
+//         return res.status(200).json(listings);
+//     } catch (error) {
+//         next(error);
+//     }
+// };
+
 export const getListings = async (req, res, next) => {
     try {
         const limit = parseInt(req.query.limit) || 12;
@@ -184,7 +223,7 @@ export const getListings = async (req, res, next) => {
         const order = req.query.order === 'asc' ? 1 : -1; // Default to descending order
 
         const query = {
-            name: { $regex: searchTerm, $options: 'ii' },
+            name: { $regex: searchTerm, $options: 'i' }, // Corrected the $options parameter
         };
 
         if (req.query.offer !== undefined) {
@@ -213,6 +252,7 @@ export const getListings = async (req, res, next) => {
         next(error);
     }
 };
+
 
 
 
