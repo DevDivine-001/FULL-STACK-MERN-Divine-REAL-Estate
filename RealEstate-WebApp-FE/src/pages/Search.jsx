@@ -7,9 +7,9 @@ export default function Search() {
   const [sidebardata, setSidebardata] = useState({
     searchTerm: '',
     type: 'all',
-    parking: false,
-    furnished: false,
-    offer: false,
+    parking: true,
+    furnished: true,
+    offer: true,
     sort: 'created_at',
     order: 'desc',
   });
@@ -122,7 +122,7 @@ export default function Search() {
     const searchQuery = urlParams.toString();
     const res = await fetch(`/api/listing/get?${searchQuery}`);
     const data = await res.json();
-    if (data.length < 9) {
+    if (data.length < 8) {
       setShowMore(false);
     }
     setListings([...listings, ...data]);
