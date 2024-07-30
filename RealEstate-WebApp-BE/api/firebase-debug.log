@@ -1,0 +1,32 @@
+[debug] [2024-07-30T16:18:03.926Z] ----------------------------------------------------------------------
+[debug] [2024-07-30T16:18:03.934Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Divine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2024-07-30T16:18:03.935Z] CLI Version:   13.14.2
+[debug] [2024-07-30T16:18:03.935Z] Platform:      win32
+[debug] [2024-07-30T16:18:03.935Z] Node Version:  v20.14.0
+[debug] [2024-07-30T16:18:03.936Z] Time:          Tue Jul 30 2024 17:18:03 GMT+0100 (West Africa Standard Time)
+[debug] [2024-07-30T16:18:03.936Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-30T16:18:04.283Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"ignore"}
+[debug] [2024-07-30T16:18:04.299Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-30T16:18:04.300Z] > authorizing via signed-in user (divineuwandu84@gmail.com)
+[debug] [2024-07-30T16:18:04.300Z] [iam] checking project divine-real-estate-web-appcom for permissions ["firebase.projects.get"]
+[debug] [2024-07-30T16:18:04.305Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/divine-real-estate-web-appcom:testIamPermissions [none]
+[debug] [2024-07-30T16:18:04.305Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/divine-real-estate-web-appcom:testIamPermissions x-goog-quota-user=projects/divine-real-estate-web-appcom
+[debug] [2024-07-30T16:18:04.306Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/divine-real-estate-web-appcom:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-30T16:18:05.504Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/divine-real-estate-web-appcom:testIamPermissions 200
+[debug] [2024-07-30T16:18:05.505Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/divine-real-estate-web-appcom:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-30T16:18:05.506Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom [none]
+[debug] [2024-07-30T16:18:06.331Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom 200
+[debug] [2024-07-30T16:18:06.332Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom {"projectId":"divine-real-estate-web-appcom","projectNumber":"681170096018","displayName":"Divine-Real-Estate-web-appcom","name":"projects/divine-real-estate-web-appcom","resources":{"hostingSite":"divine-real-estate-web-appcom"},"state":"ACTIVE","etag":"1_36d88526-db7e-4290-9b30-50e3d191da56"}
+[debug] [2024-07-30T16:18:06.340Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom/sites 
+[debug] [2024-07-30T16:18:08.883Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom/sites 200
+[debug] [2024-07-30T16:18:08.883Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom/sites {"sites":[{"name":"projects/divine-real-estate-web-appcom/sites/divine-real-estate-web-appcom","defaultUrl":"https://divine-real-estate-web-appcom.web.app","appId":"1:681170096018:web:a5585bd804dda25e5b7b4b","type":"DEFAULT_SITE"}]}
+[debug] [2024-07-30T16:18:08.884Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom/webApps/1:681170096018:web:a5585bd804dda25e5b7b4b/config [none]
+[debug] [2024-07-30T16:18:09.796Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom/webApps/1:681170096018:web:a5585bd804dda25e5b7b4b/config 200
+[debug] [2024-07-30T16:18:09.797Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom/webApps/1:681170096018:web:a5585bd804dda25e5b7b4b/config {"projectId":"divine-real-estate-web-appcom","appId":"1:681170096018:web:a5585bd804dda25e5b7b4b","storageBucket":"divine-real-estate-web-appcom.appspot.com","apiKey":"AIzaSyACA6Thkr8BrY7Uw_CS3WRgGTpqhALYyOc","authDomain":"divine-real-estate-web-appcom.firebaseapp.com","messagingSenderId":"681170096018"}
+[debug] [2024-07-30T16:18:09.806Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom [none]
+[debug] [2024-07-30T16:18:10.139Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom 200
+[debug] [2024-07-30T16:18:10.139Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/divine-real-estate-web-appcom {"projectId":"divine-real-estate-web-appcom","projectNumber":"681170096018","displayName":"Divine-Real-Estate-web-appcom","name":"projects/divine-real-estate-web-appcom","resources":{"hostingSite":"divine-real-estate-web-appcom"},"state":"ACTIVE","etag":"1_36d88526-db7e-4290-9b30-50e3d191da56"}
+[debug] [2024-07-30T16:18:10.144Z] Specified "public" directory "public" does not exist; Deploy to Hosting site "divine-real-estate-web-appcom" may fail or be empty.
+[info] i  hosting[divine-real-estate-web-appcom]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[divine-real-estate-web-appcom]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}

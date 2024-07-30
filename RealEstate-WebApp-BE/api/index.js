@@ -14,7 +14,7 @@ mongoose.connect(process.env.mongoose).then(() => {
 }).catch((error) => {
     console.log(error);
 });
-const __dirname = path.resolve( )
+const __dirname = path.resolve()
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(express.json())
 
 app.use(cookieParser());
 
-app.listen(4000, () => {
+app.listen(6000, () => {
     console.log('Server is running on port 3000 baby🚀🚀🚀🚀🚀');
 });
 
@@ -40,10 +40,10 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
-app.use(express.static(path.join(__dirname, 'client/dist')))
+app.use(express.static(path.join(__dirname, 'RealEstate-WebApp-FE/dist')))
 
-app.get('*', (req, res )=>{
-    res.sendFile(pat.join(__dirname, 'client', 'dist', 'index.html'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 })
 
 app.use((err, req, res, next) => {
